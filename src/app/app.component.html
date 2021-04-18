@@ -1,0 +1,125 @@
+<!-- <h1>Welcome {{title}}</h1> -->
+<!-- <happy></happy> -->
+<!-- <app-first></app-first> -->
+<!-- <div *ngIf="showUser">
+<h1 *ngFor="let user of users" (click)="selectedUser = user.name" >{{user.name}} {{user.employee_id}} {{user.age}}</h1>
+</div>
+<br/>
+<h1 *ngFor="let user of users; let i=index" [ngClass]="{'firstelement':i==2}" (click)="selectedUser = user.name" >{{user.name}} {{user.employee_id}} {{user.age}}</h1>
+<br/>
+<h1 *ngFor="let user of users; let i=index" [ngStyle]="{'color':i==1 ? 'blue':''}" (click)="selectedUser = user.name" >{{user.name}} {{user.employee_id}} {{user.age}}</h1>
+<br/>
+<div [ngSwitch]="selectedUser">
+    <h3 *ngSwitchCase="'veena'">Veena</h3>
+    <h3 *ngSwitchCase="'abi'">abi</h3>
+    <h3 *ngSwitchCase="'ram'">ram</h3>
+    <h3 *ngSwitchDefault>Not matched</h3>
+</div>
+
+<h1>ngFor</h1>
+<h1
+  *ngFor="
+    let user of users;
+    let i = index;
+    let f = first;
+    let l = last;
+    let e = even;
+    let o = odd
+  "
+  [ngClass]="{ first: f, last: l, odd: o }"
+>
+  {{ user.name }} {{ user.employee_id }} {{ user.age }} {{ i }} | {{ f }} |
+  {{ l }} |{{ e }} |{{ o }}
+</h1>
+<button (click)="addMember()">Add new person</button>
+
+<h1>ngIf</h1>
+<button (click)="showElements = !showElements">Toggle Show</button>
+<h1 *ngIf="showElements; then thenBlock else elseblock "> show Elements</h1>
+<h1 [hidden]="showElements">Hidden Elements</h1>
+
+<ng-template #elseblock>
+  <h1>Else block run</h1>
+</ng-template>
+
+<ng-template #thenBlock>
+  <h1>Then block</h1>
+</ng-template>
+
+<div [ngSwitch="number"]>
+  <h1 *ngSwitchCase="'1'">One</h1>
+  <h1 *ngSwitchCase="'2'">Two</h1>
+  <h1 *ngSwitchCase="'3'">Three</h1>
+  <h1 *ngSwitchCase="'4'">Four</h1>
+  <h1 *ngSwitchCase="'5'">Five</h1>
+</div> -->
+
+<!-- <button (click)="getDataFromAPI()" >View Details</button>
+
+<ul *ngFor="let d of datas">
+  <li>ID : {{d.id}}</li>
+  <li>Title : {{d.title}}</li>
+  <li>Body : {{d.body}}</li>
+</ul> -->
+
+<!-- <h1>Angular</h1>
+<courses></courses> -->
+
+<!-- <h1>hi</h1>
+<favorite [isFavorite]="Post.isFavorite" ></favorite> -->
+<!-- 
+<h1 [ngClass]="[smallFont,bluecolor]">Welcome</h1>
+<h3 [ngClass]="largeFont">Rakhavendra</h3>
+
+<h2>Date Pipe</h2>
+<div>{{ date }}</div>
+<div>{{ date | date}}</div>
+<div>{{ date | date: 'dd - MM - YYYY'}}</div>
+<div>{{ date | date: 'shortDate'}}</div>
+<h2>String Pipe</h2>
+<div>{{ myName }}</div>
+<div>{{ myName | uppercase}}</div>
+<div>{{ myName | lowercase}}</div>
+<h2>Number Pipe</h2>
+<div>{{ myNumber }}</div>
+<div>{{ myNumber | number}}</div>
+<div>{{ myNumber | number : '1.1-2'}}</div>
+<h2>Currency Pipe</h2>
+<div>{{ myCurrency }}</div>
+<div>{{ myCurrency | currency:'INR'}}</div>
+<h2>Number Pipe</h2>
+<div>{{ myNumber }}</div>
+<div>{{ myNumber | percent}}</div>
+<div>{{ myNumber | percent : '1.1-2'}}</div>
+
+<h1>Services using data display</h1>
+
+{{JSONPlaceholder.count}} -->
+<!-- <h1>Animals List</h1>
+<input type="text" [(ngModel)]="animalName"  placeholder="Enter your pet animal" />
+<ul>
+  <li *ngFor="let animal of animals | summary:animalName">{{animal}}</li>
+</ul> -->
+
+<!-- <div class="pointer" (click)="showHelpPopup()">
+    <i class="fa fa-info-circle" aria-hidden="true"></i>
+   Item find
+</div>
+
+<div class="modal" tabindex="-1" *ngIf="helpPopup">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Loading...</h5>
+                <button type="button" class="close" (click)="closePopup()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body center text-center">
+                <p>Sorry We could not find items </p>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div> -->
+<app-child1></app-child1>
