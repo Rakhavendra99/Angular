@@ -16,7 +16,7 @@ export class Child1Component implements OnInit {
   increment(){
     this.count++;
     if(this.count == 10){
-      alert("Your reach 10");
+      alert("Your reach 10 in child 1");
     }
   }
   decrement(){

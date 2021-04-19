@@ -13,6 +13,13 @@ export class Child2Component implements OnInit,OnChanges{
   ngOnInit(): void {
   }
   ngOnChanges(changes:SimpleChanges){
+    for(let property in changes){
+      if(property === 'countvalue'){
+        if(changes[property].currentValue == 7){
+          alert('execeed 7 form child 2')
+        }
+      }
+    }
    console.log("changes----------",changes); 
   }
 }
