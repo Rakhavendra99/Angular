@@ -7,7 +7,9 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 })
 export class FirstComponent implements OnInit,OnChanges,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked,OnDestroy {
   @Input() countvalue:any;
-  constructor() { }
+  constructor() { 
+    console.log("first constructor is running")
+  }
 
   ngOnChanges():void{
     console.log("       OnChange")

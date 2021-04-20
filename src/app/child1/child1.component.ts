@@ -9,7 +9,9 @@ export class Child1Component implements OnInit,DoCheck,OnChanges,AfterContentIni
 AfterViewInit,AfterViewChecked,OnDestroy {
    
   count =0;
-  constructor() { }
+  constructor() { 
+    console.log("Child1 constructor run")
+  }
 
   
 
