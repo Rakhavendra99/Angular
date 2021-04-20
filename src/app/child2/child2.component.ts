@@ -10,16 +10,38 @@ export class Child2Component implements OnInit,OnChanges{
   @Input() countvalue:any;
   constructor() { }
 
-  ngOnInit(): void {
+  // ngOnChanges(changes:SimpleChanges){
+  //   for(let property in changes){
+  //     if(property === 'countvalue'){
+  //       if(changes[property].currentValue == 7){
+  //         alert('execeed 7 form child 2')
+  //       }
+  //     }
+  //   }
+  //  console.log("changes----------",changes); 
+  // }
+  ngOnChanges():void{
+    console.log("    OnChange")
   }
-  ngOnChanges(changes:SimpleChanges){
-    for(let property in changes){
-      if(property === 'countvalue'){
-        if(changes[property].currentValue == 7){
-          alert('execeed 7 form child 2')
-        }
-      }
-    }
-   console.log("changes----------",changes); 
+  ngOnInit(): void {
+    console.log("    onInit")
+  }
+  ngDoCheck():void{
+    console.log("    Docheck")
+  }
+  ngAfterContentInit():void{
+    console.log("    AfterContentInit")
+  }
+  ngAfterContentChecked():void{
+    console.log("    Aftercontentchecked")
+  }
+  ngAfterViewInit():void{
+    console.log("    AfterviewInit")
+  }
+  ngAfterViewChecked():void{
+    console.log("    Agterviewchecked")
+  }
+  ngOnDestroy():void{
+    console.log("    OnDestroy")
   }
 }

@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child1',
   templateUrl: './child1.component.html',
   styleUrls: ['./child1.component.css']
 })
-export class Child1Component implements OnInit {
+export class Child1Component implements OnInit,DoCheck,OnChanges,AfterContentInit, AfterContentChecked,
+AfterViewInit,AfterViewChecked,OnDestroy {
    
   count =0;
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  
 
   increment(){
     this.count++;
@@ -22,5 +22,30 @@ export class Child1Component implements OnInit {
   decrement(){
     this.count--;
   }
-
+ 
+  ngOnChanges():void{
+    console.log("OnChange")
+  }
+  ngOnInit(): void {
+    console.log("onInit")
+  }
+  ngDoCheck():void{
+    console.log("Docheck")
+  }
+  ngAfterContentInit():void{
+    console.log("AfterContentInit")
+  }
+  ngAfterContentChecked():void{
+    console.log("Aftercontentchecked")
+  }
+  ngAfterViewInit():void{
+    console.log("AfterviewInit")
+  }
+  ngAfterViewChecked():void{
+    console.log("Agterviewchecked")
+  }
+  ngOnDestroy():void{
+    console.log("OnDestroy")
+  }
 }
+
