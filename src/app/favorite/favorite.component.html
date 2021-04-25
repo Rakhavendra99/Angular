@@ -1,2 +1,12 @@
 <h3>favorite works!</h3>
-<p>counter value is </p>
+<p (click)="changes()">counter value is {{isFavorite}} </p>
+<p >My project name is {{title}}</p>
+
+<h2>Directives</h2>
+<div *ngIf="list.length >0; then listPresent else listNotPresent"></div>
+<ng-template #listPresent>
+    List is present
+</ng-template>
+<ng-template #listNotPresent>
+    List not present
+</ng-template> 

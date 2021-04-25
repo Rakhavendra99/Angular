@@ -8,7 +8,13 @@ import { JSONPlaceholderService} from './services/jsonplaceholder.service'
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-   title = 'my-angular-app';
+  post={
+   title : 'my-angular-app',
+   isFavorite:true
+  }
+  outputEvent(){
+    console.log("Favorite is running")
+  }
   // selectedUser = '';
   // showUser: boolean = true;
 
@@ -36,18 +42,23 @@ export class AppComponent {
 
   // number:String='1';
 
-  // datas:Array<any>
+  datas:Array<any>
+  headers=["ID","Title","Body"]
+  isTrue=false;
+  constructor(private JSONPlaceholder:JSONPlaceholderService){
+    this.datas=new Array<any>()
+    this.getDataFromAPI();    
+  }
 
-  // constructor(private JSONPlaceholder:JSONPlaceholderService){
-  //   this.datas=new Array<any>()
-  // }
-
-  // getDataFromAPI(){
-  //   this.JSONPlaceholder.getData().subscribe((data)=>{
-  //       console.log(data)
-  //       this.datas=data
-  //   })
-  // }
+  getDataFromAPI(){
+    this.JSONPlaceholder.getData().subscribe((data)=>{
+        console.log(data)
+        this.datas=data
+    })
+  }
+  event(){
+    this.isTrue = !this.isTrue;
+  }
 
   // constructor(private JSONPlaceholder:JSONPlaceholderService){
     

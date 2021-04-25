@@ -12,9 +12,7 @@ AfterViewInit,AfterViewChecked,OnDestroy {
   constructor() { 
     console.log("Child1 constructor run")
   }
-
   
-
   increment(){
     this.count++;
     if(this.count == 10){

@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit,Input } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-first',
@@ -10,10 +10,20 @@ export class FirstComponent implements OnInit,OnChanges,DoCheck,AfterContentInit
   constructor() { 
     console.log("first constructor is running")
   }
-
-  ngOnChanges():void{
-    console.log("       OnChange")
+  ngOnChanges(changes:SimpleChanges){
+    for(let property in changes){
+      if(property === 'countvalue'){
+        if(changes[property].currentValue == 5){
+          alert('execeed 5 form child 3')
+        }
+      }
+    }
+   console.log("changes----------",changes); 
   }
+
+  // ngOnChanges():void{
+  //   console.log("       OnChange")
+  // }
   ngOnInit(): void {
     console.log("       onInit")
   }

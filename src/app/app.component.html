@@ -54,13 +54,37 @@
   <h1 *ngSwitchCase="'5'">Five</h1>
 </div> -->
 
-<!-- <button (click)="getDataFromAPI()" >View Details</button>
+<!-- <button (click)="getDataFromAPI()" >View Details</button> -->
 
-<ul *ngFor="let d of datas">
+<!-- <ul *ngFor="let d of datas">
+  <li>PostId : {{d.postId}}</li>
   <li>ID : {{d.id}}</li>
-  <li>Title : {{d.title}}</li>
-  <li>Body : {{d.body}}</li>
+  <li>Name : {{d.name}}</li>
+  <li>Email : {{d.email}}</li>
+  <li>Body :{{d.body}}</li>
 </ul> -->
+
+<table id="customers">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th *ngIf="isTrue">Email</th>
+    <th *ngIf="isTrue">PostId</th>
+    <th *ngIf="isTrue">Body</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let d of datas">
+      <td (click)="event()"> {{d.id}}</td>
+      <td > {{d.name}}</td>
+      <td *ngIf="isTrue">{{d.email}}</td>
+      <td *ngIf="isTrue">{{d.postId}}</td>
+      <td *ngIf="isTrue">{{d.body}}</td>
+    </tr>
+  </tbody>
+</table>
+
 
 <!-- <h1>Angular</h1>
 <courses></courses> -->
@@ -122,4 +146,9 @@
         </div>
     </div>
 </div> -->
-<app-child1></app-child1>
+
+<!-- <app-child1></app-child1> -->
+
+<!-- <hr/>
+
+<favorite [isFavorite]="post.isFavorite" [title]="post.title" (change)="outputEvent()"></favorite> -->

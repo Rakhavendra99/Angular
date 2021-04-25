@@ -12,19 +12,19 @@ export class Child2Component implements OnInit,OnChanges,DoCheck,AfterContentIni
     console.log("child2 constructor is run")
   }
 
-  // ngOnChanges(changes:SimpleChanges){
-  //   for(let property in changes){
-  //     if(property === 'countvalue'){
-  //       if(changes[property].currentValue == 7){
-  //         alert('execeed 7 form child 2')
-  //       }
-  //     }
-  //   }
-  //  console.log("changes----------",changes); 
-  // }
-  ngOnChanges():void{
-    console.log("    OnChange")
+  ngOnChanges(changes:SimpleChanges){
+    for(let property in changes){
+      if(property === 'countvalue'){
+        if(changes[property].currentValue == 7){
+          alert('execeed 7 form child 2')
+        }
+      }
+    }
+   console.log("changes----------",changes); 
   }
+  // ngOnChanges():void{
+  //   console.log("    OnChange")
+  // }
   ngOnInit(): void {
     console.log("    onInit")
   }
