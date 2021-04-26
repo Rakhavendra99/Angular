@@ -15,6 +15,14 @@ export class AppComponent {
   outputEvent(){
     console.log("Favorite is running")
   }
+  details= {
+    ID: 'pss007',
+    firstName: 'Rakhav',
+    lastName: 's m',
+    DOB: '03/06/1999',
+    company:'proglint',
+    salary:8000.98
+  }
   // selectedUser = '';
   // showUser: boolean = true;
 

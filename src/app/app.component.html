@@ -64,7 +64,7 @@
   <li>Body :{{d.body}}</li>
 </ul> -->
 
-<table id="customers">
+<!-- <table id="customers">
   <thead>
   <tr>
     <th>ID</th>
@@ -83,7 +83,7 @@
       <td *ngIf="isTrue">{{d.body}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 
 <!-- <h1>Angular</h1>
@@ -152,3 +152,21 @@
 <!-- <hr/>
 
 <favorite [isFavorite]="post.isFavorite" [title]="post.title" (change)="outputEvent()"></favorite> -->
+
+<h2>PIPE</h2>
+<h3>Build in Pipes</h3>
+<div> {{ details.firstName | lowercase }}.{{ details.lastName | uppercase}}</div>
+<div> {{ details.DOB | date:'MMMM YYYY dd'}}</div>
+<div>  {{ details.salary | currency:'INR':'code'}}</div>
+<code>  {{ details | json}}</code>
+<h3>Parameterized Pipes</h3>
+<div> {{ details.DOB | date:'short'}}</div>
+<div> {{ details.DOB | date:'medium'}}</div>
+<div> {{ details.DOB | date:'long'}}</div>
+<div> {{ details.DOB | date:'full'}}</div>
+<div> {{ details.DOB | date:'shortDate'}}</div>
+<div> {{ details.DOB | date:'mediumDate'}}</div>
+<div> {{ details.DOB | date:'longDate'}}</div>
+<div> {{ details.DOB | date:'fullDate'}}</div>
+<h3>Chaining Pipes</h3>
+<div> {{ details.DOB | date:'MMMM' | uppercase }}</div>
