@@ -3,10 +3,35 @@
 <p >My project name is {{title}}</p>
 
 <h2>Directives</h2>
+<h4>ngIf</h4>
 <div *ngIf="list.length >0; then listPresent else listNotPresent"></div>
-<ng-template #listPresent>
+<ng-template #listPresent >
     List is present
 </ng-template>
 <ng-template #listNotPresent>
     List not present
 </ng-template> 
+
+<h4>Switch case</h4>
+<ul>
+    <li ><a (click)="viewMode = 'map'">Map View</a></li>
+    <li ><a (click)="viewMode = 'list'">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map view content</div>
+    <div *ngSwitchCase="'list'">List view content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<h4>ngFor</h4>
+<ul>
+    <li *ngFor = "let i of courses; even as isEven"> {{i.name}}<span *ngIf="isEven">(EVEN)</span></li>
+</ul>
+<h4>ngFor as change Detection</h4>
+<button (click)="onAdd()">Add</button>
+<ul>
+    <li *ngFor = "let i of courses">
+        {{ i.name }}
+        <button (click)="onRemove(i)">Remove</button>
+    </li>
+</ul>
