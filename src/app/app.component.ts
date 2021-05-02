@@ -53,6 +53,7 @@ export class AppComponent {
   datas:Array<any>
   headers=["ID","Title","Body"]
   isTrue=false;
+  msg='';
   constructor(private JSONPlaceholder:JSONPlaceholderService){
     this.datas=new Array<any>()
     this.getDataFromAPI();    
@@ -64,6 +65,40 @@ export class AppComponent {
         this.datas=data
     })
   }
+
+  addNewdata(form:any){
+    console.log(form.value.id);
+    console.log(form.value.firstName);
+    console.log(form.value.lastName);
+    if(form.value.id ==='' || form.value.firstName === '' || form.value.lastName===''){
+        this.msg="Enter correct value"
+    }else{
+    const newFromData = {id:form.value.id, firstName:form.value.firstName, lastName:form.value.lastName};
+    this.JSONPlaceholder.postData(newFromData).subscribe((data)=>{
+      console.log(data)
+      })
+    }
+  }
+
+  updateContact(contactId:any){
+    const newFromData ={id:contactId, firstName:"Dhilip",lastName:"R"};
+    this.JSONPlaceholder.putData(contactId,newFromData).subscribe((data)=>{
+      console.log(data);
+    })
+  }
+
+  deleteContact(contactId:any){
+    this.JSONPlaceholder.deleteData(contactId).subscribe((data)=>{
+      console.log(data);
+    })
+  }
+  getContactById(){
+    this.JSONPlaceholder.getcontactById().subscribe((data)=>{
+      console.log(data);
+    })
+  }
+
+
   event(){
     this.isTrue = !this.isTrue;
   }

@@ -63,3 +63,7 @@ button:hover{
 button{
   padding:9px;
 }
+
+.error_message{
+  color: red;
+}

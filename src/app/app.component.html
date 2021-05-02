@@ -85,6 +85,54 @@
   </tbody>
 </table> -->
 
+<!-- Get -->
+<h3>Get data from url</h3>
+<ul *ngFor="let d of datas">
+  <!-- <li>Id : {{d.id}}</li> -->
+  <li> Id : {{d.id}} Name : {{d.firstName}} {{d.lastName}}</li>
+  <!-- <li>lastName : {{d.lastName}}</li> -->
+</ul>
+
+<!-- Post -->
+<h3>Create new Json data</h3><span class="error_message">{{this.msg}}</span>
+<div class="container">
+<form #addNewForm="ngForm" (ngSubmit)="addNewdata(addNewForm)" >
+  <div class="form-group">
+    <label for="exampleInputEmail1">Id</label>
+    <input type="text" name="id" class="form-control" placeholder="Enter id"  ngModel/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">FirstName</label>
+    <input type="text" name="firstName" class="form-control"  placeholder="Enter FirstName"  ngModel/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">LastName</label>
+    <input type="text" name="lastName" class="form-control" placeholder="Enter lastName"  ngModel/>
+  </div>
+<button type="submit" class="form-control" [disabled]="!addNewForm.valid" >Add new json value</button>
+</form>
+<p></p>
+<div class="container">
+  <!-- Update -->
+  <button (click)="updateContact(9)">Updata in 9</button>
+  <!-- Delete -->
+  <button (click)="deleteContact(10)">Delete data in 10</button>
+  <button (click)="getContactById()">Params send data</button>
+</div>
+</div>
+
+<!-- Headers
+  -PUT
+  -GET
+  -Delete
+  -PATCH
+  -POST
+   -->
+
+
+
+
+
 
 <!-- <h1>Angular</h1>
 <courses></courses> -->
@@ -151,7 +199,7 @@
 
 <!-- <hr/> -->
 
-<favorite [isFavorite]="post.isFavorite" [title]="post.title" (change)="outputEvent()"></favorite>
+<!-- <favorite [isFavorite]="post.isFavorite" [title]="post.title" (change)="outputEvent()"></favorite> -->
 
 <!-- <h2>PIPE</h2>
 <h3>Build in Pipes</h3>
