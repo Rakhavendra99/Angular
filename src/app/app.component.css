@@ -25,6 +25,7 @@
 .large-font{
     font-size: 40px;
 } */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 #customers{
   border-collapse: collapse;
   width: 100%;
